@@ -1,0 +1,33 @@
+@use 'variables';
+
+.game-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+  background-color: variables.$color-primary;
+
+  &__reset-button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+    background-color: variables.$color-primary;
+    border: 4px outset variables.$color-border-light;
+    cursor: pointer;
+
+    & span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(1.5);
+    }
+  }
+
+  &__display-wrapper {
+    border: 3px inset variables.$color-border-light;
+  }
+}

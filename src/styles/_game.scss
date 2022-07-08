@@ -1,0 +1,17 @@
+@use 'variables';
+
+.game {
+  width: fit-content;
+  padding: 8px;
+  background-color: variables.$color-primary;
+  border: 6px outset variables.$color-border-light;
+
+  &-header-wrapper {
+    border: 6px inset variables.$color-border-light;
+    padding: 6px;
+    margin-bottom: 8px;
+  }
+  &-board-wrapper {
+    border: 6px inset variables.$color-border-light;
+  }
+}

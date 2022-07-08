@@ -1,0 +1,136 @@
+$segment-length: 8px;
+$segment-width: calc($segment-length / 2);
+$display-width: $segment-length * 2 + 2;
+$display-height: $segment-length * 4 + 3;
+
+$color: rgb(99, 0, 0);
+$active-color: red;
+
+.seven-segment-display {
+  display: flex;
+  column-gap: 5px;
+  padding: 2px;
+  background-color: #000;
+
+  .seven-segment {
+    position: relative;
+    width: $display-width;
+    height: $display-height;
+
+    &__first-segment {
+      position: absolute;
+      top: 0;
+      left: 1px;
+      width: $segment-length;
+      height: 0;
+      border-top: $segment-width solid $color;
+      border-left: calc($segment-length - $segment-width) solid transparent;
+      border-right: calc($segment-length - $segment-width) solid transparent;
+
+      &.active {
+        border-top-color: $active-color;
+      }
+    }
+    &__second-segment {
+      position: absolute;
+      top: 1px;
+      right: 0;
+      width: 0;
+      height: $segment-length;
+      border-top: calc($segment-length - $segment-width) solid transparent;
+      border-right: $segment-width solid $color;
+      border-bottom: calc($segment-length - $segment-width) solid transparent;
+
+      &.active {
+        border-right-color: $active-color;
+      }
+    }
+    &__third-segment {
+      position: absolute;
+      bottom: 1px;
+      right: 0;
+      width: 0;
+      height: $segment-length;
+      border-top: calc($segment-length - $segment-width) solid transparent;
+      border-right: $segment-width solid $color;
+      border-bottom: calc($segment-length - $segment-width) solid transparent;
+
+      &.active {
+        border-right-color: $active-color;
+      }
+    }
+    &__fourth-segment {
+      position: absolute;
+      bottom: 0;
+      left: 1px;
+      width: $segment-length;
+      height: 0;
+      border-right: calc($segment-length - $segment-width) solid transparent;
+      border-bottom: $segment-width solid $color;
+      border-left: calc($segment-length - $segment-width) solid transparent;
+
+      &.active {
+        border-bottom-color: $active-color;
+      }
+    }
+    &__fifth-segment {
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      width: 0;
+      height: $segment-length;
+      border-top: calc($segment-length - $segment-width) solid transparent;
+      border-bottom: calc($segment-length - $segment-width) solid transparent;
+      border-left: $segment-width solid $color;
+
+      &.active {
+        border-left-color: $active-color;
+      }
+    }
+    &__sixth-segment {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      width: 0;
+      height: $segment-length;
+      border-top: calc($segment-length - $segment-width) solid transparent;
+      border-bottom: calc($segment-length - $segment-width) solid transparent;
+      border-left: $segment-width solid $color;
+
+      &.active {
+        border-left-color: $active-color;
+      }
+    }
+    &__seventh-segment {
+      position: absolute;
+      top: 50%;
+      left: 1px;
+      width: $segment-length;
+      height: 0;
+      border-right: calc($segment-length - $segment-width) solid transparent;
+      border-bottom: calc($segment-width/2) solid $color;
+      border-left: calc($segment-length - $segment-width) solid transparent;
+      transform: translateY(calc(-1 * $segment-width/2));
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: calc($segment-width/2);
+        left: -1 * $segment-width;
+        width: $segment-length;
+        height: 0;
+        border-top: calc($segment-width/2) solid $color;
+        border-right: calc($segment-length - $segment-width) solid transparent;
+        border-left: calc($segment-length - $segment-width) solid transparent;
+      }
+
+      &.active {
+        border-bottom-color: $active-color;
+
+        &:after {
+          border-top-color: $active-color;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use 'variables';
+
+@font-face {
+  font-family: 'MineSweeper';
+  src: url('../assets/fonts/mine-sweeper.ttf') format('truetype');
+}
+
+body {
+  font-family: MineSweeper;
+  background-color: variables.$bg;
+}
+
+.d-flex {
+  display: flex;
+}

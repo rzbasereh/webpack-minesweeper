@@ -1,0 +1,73 @@
+@use 'variables';
+
+.box {
+  font-family: MineSweeper;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background-color: #c0c0c0;
+  border: 1px solid #808080;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 22px;
+    height: 22px;
+    border: 4px outset #fdfdfd;
+    transform: translate(-50%, -50%);
+  }
+
+  &.visible {
+    cursor: default;
+
+    &::before {
+      display: none;
+    }
+
+    &.bg-red {
+      background-color: red;
+    }
+
+    &.value- {
+      &1 {
+        color: variables.$color-box-1;
+      }
+      &2 {
+        color: variables.$color-box-2;
+      }
+      &3 {
+        color: variables.$color-box-3;
+      }
+      &4 {
+        color: variables.$color-box-4;
+      }
+      &5 {
+        color: variables.$color-box-5;
+      }
+      &6 {
+        color: variables.$color-box-6;
+      }
+      &7 {
+        color: variables.$color-box-7;
+      }
+      &8 {
+        color: variables.$color-box-8;
+      }
+      &9 {
+        color: variables.$color-box-9;
+      }
+    }
+  }
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}

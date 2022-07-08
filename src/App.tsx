@@ -1,7 +1,9 @@
 import React from 'react';
+import Game from './components/Game';
+import './styles/index.scss';
 
 const App = () => {
-  return <div>App</div>;
+  return <Game />;
 };
 
 export default App;
